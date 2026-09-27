@@ -57,8 +57,10 @@ Question 5. shows whether Ahmad and Muhammad have a common parent
 71 ?- parent(P, ahmad), parent(P, muhammad).
 true.
 
+72 ?- parent(X, ahamd), parent(X, muhammad).
+parent = ali.
 
 Question 6. shows whether Khan is the brother of Nora
 
-72 ?- brother(khan, nora).
+73 ?- brother(khan, nora).
 true.
