@@ -1,10 +1,35 @@
+% ============================================================
+%  ARTI 303 - Lab 4  |  Variables in Prolog
+%  The family facts used throughout this lab.
+% ============================================================
+
+male(ali).
+male(ahmad).
+male(muhammad).
+male(faisal).
+male(hassan).
+male(khan).
+
+female(sara).
+female(nora).
+
+parent(ali, ahmad).
+parent(ali, muhammad).
+parent(ahmad, sara).
+parent(ahmad, nora).
+parent(ahmad, khan).
+parent(muhammad, faisal).
+parent(faisal, hassan).
+
+==============================================================
+Answers:
+==============================================================
+
 Question 1. shows the names of all females
 
 67 ?- female(Who).
-Who = mariam ;
-Who = rabab ;
-Who = fatimah ;
-Who = layla.
+Who = sara;
+Who = nora.
 
 
 Question 2. shows whether there is any male
@@ -12,36 +37,28 @@ Question 2. shows whether there is any male
 67 ?- male(_).
 true.
 
-68 ?- male(Who).
-Who = abduallah ;
-Who = ahmad ;
-Who = mohammad ;
-Who = ali ;
-Who = aziz.
+Question 3. shows the grandparent of Faisal
+
+69 ?- parent(GP, P), parent(P, Faisal).
+GP = ali,
+P = muhammad,
+Faisal = faisal 
 
 
-Question 3.  shows the grandparent of Mohammad
+Question 4. shows all daughters of Ahmad
 
-69 ?- parent(GP, P), parent(P, Mohammad).
-GP = abduallah,
-P = ahmad,
-Mohammad = mohammad 
-
-
-Question 4. shows all daughters of Aziz
-
-70 ?- parent(aziz, X), female(X).
-X = fatimah ;
-X = rabab.
+70 ?- parent(ahmad, X), female(X).
+X = sara ;
+X = nora.
 
 
-Question 5. shows whether Layla and Fatimah have a common parent
+Question 5. shows whether Ahmad and Muhammad have a common parent
 
-71 ?- parent(P, layla), parent(P, fatimah).
-false.
+71 ?- parent(P, ahmad), parent(P, muhammad).
+true.
 
 
-Question 6. shows whether Ali is the brother of Rabab
+Question 6. shows whether Khan is the brother of Nora
 
-72 ?- brother(ali, rabab).
-false.
+72 ?- brother(khan, nora).
+true.
