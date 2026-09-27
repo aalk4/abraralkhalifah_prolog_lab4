@@ -1,0 +1,47 @@
+Question 1. shows the names of all females
+
+67 ?- female(Who).
+Who = mariam ;
+Who = rabab ;
+Who = fatimah ;
+Who = layla.
+
+
+Question 2. shows whether there is any male
+
+67 ?- male(_).
+true.
+
+68 ?- male(Who).
+Who = abduallah ;
+Who = ahmad ;
+Who = mohammad ;
+Who = ali ;
+Who = aziz.
+
+
+Question 3.  shows the grandparent of Mohammad
+
+69 ?- parent(GP, P), parent(P, Mohammad).
+GP = abduallah,
+P = ahmad,
+Mohammad = mohammad 
+
+
+Question 4. shows all daughters of Aziz
+
+70 ?- parent(aziz, X), female(X).
+X = fatimah ;
+X = rabab.
+
+
+Question 5. shows whether Layla and Fatimah have a common parent
+
+71 ?- parent(P, layla), parent(P, fatimah).
+false.
+
+
+Question 6. shows whether Ali is the brother of Rabab
+
+72 ?- brother(ali, rabab).
+false.
